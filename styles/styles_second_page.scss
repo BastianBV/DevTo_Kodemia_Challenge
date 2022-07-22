@@ -1,0 +1,212 @@
+.principalContentPage2{
+    margin-top: 100px;
+}
+//Cambios de Bastian/
+.card-img-top{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.targetusr{
+    width: 50px;
+    height: 50px;
+    border-radius:1000px;
+}
+.follow2{
+    background-color: #3b49df !important;
+}
+
+
+.-border2{
+    position: relative; 
+    height: 32px;
+}
+.container-aside{
+    width: 345.609px;
+    height: 442px;
+}
+.image-document{
+    position: relative;
+    top:-15px;
+}
+
+//////////////////
+.avatar_entry_2nd{
+    height: 40px;
+}
+.autorProperties{
+    line-height: 1;
+}
+
+.book_image{
+    max-width: 80%;
+}
+
+.textArea{
+    max-width: 80%;
+}
+
+.commentBox{
+    border: 1px rgb(238, 232, 232) solid;
+    border-radius: 15px;
+    padding: 15px;
+
+}
+
+.image-graph_2{
+    width: 80%;
+    height: auto;
+}
+
+//cambios de Bastian
+
+
+
+//////////////////    ASIDE
+$iconred: #DC1B26;
+  $iconblue: #44509E;
+  $icongreen: #199A6E;
+  body{
+    background-color: #F5F5F5;
+  }
+.aside-icon-bar{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 250px;
+  justify-content: space-around;
+  margin-left: 30px;
+}
+  .aside-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 51px;
+    width: 51px;
+    position: relative;
+    .checkboxhider{
+      display: none;
+    }
+      .checkedlabel {
+            .aside-icon-default, .aside-icon-hover{
+                  width: 50px;
+                  height: 50px;
+                  position: absolute;
+                  border-radius: 50%;
+                  left: 0px;
+                  top: 0px;
+             }
+            .aside-icon-hover{
+                  opacity: 0;
+                  transition: .4s;
+             }
+             .bigring{
+                  width: 110px;
+                  height: 110px;
+                  position: absolute;
+                  opacity: 0;
+                  transition: .4s;
+                  align-self: center;
+                  left: -30px;
+                  top: -30px;
+             }
+            .aside-icon-cheked{
+              width: 40px;
+              height: 40px;
+              position: absolute;
+              left: 5px;
+              top: 5px;
+              transition: .4s;
+              border-radius: 50%;
+              opacity: 0;
+            }
+          }
+          &:hover{
+            .aside-icon-hover{
+            opacity: 1;
+          }}
+      }
+      .checkboxhider:checked ~ .checkedlabel > {
+      .aside-icon-default, .aside-icon-hover{
+        display: none;
+      }
+      .aside-icon-cheked{
+        opacity: 1 ;
+        width: 50px;
+        height: 50px;
+        left: 0px;
+        top: 0px;
+      }
+      .bigring{
+        display: flex;
+        opacity: .6;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+}
+    #unicorn{
+      border-style: solid;
+      border-color: #199A6E;
+      border-width: 2px;
+    }
+    #heart{
+      border-style: solid;
+      border-color:#DC1B26;
+      border-width: 2px;
+    }
+    #save{
+      border-style: solid;
+      border-color:#44509E;
+      border-width: 2px;
+    }
+    .smallring{
+      display: none;
+    }
+    .asidecount{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 30px;
+    }
+
+
+/*
+    .leftAside2{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+    }
+
+    @media(min-width:768px){
+        
+    .leftAside2{
+        position: relative;
+
+    }
+    
+}
+ 
+*/
+
+
+//! Cambios generales Sebas 
+
+.dropstart .dropdown-menu[data-bs-popper] {
+  top: 150%;
+  right: 0%;
+  left: auto;
+  margin-top: 0;
+  margin-right: var(--bs-dropdown-spacer);
+}
+
+
+
+
+

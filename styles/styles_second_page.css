@@ -2,12 +2,6 @@
   margin-top: 100px;
 }
 
-.card-img-top {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-}
-
 .targetusr {
   width: 50px;
   height: 50px;
@@ -196,4 +190,21 @@ body {
   left: auto;
   margin-top: 0;
   margin-right: var(--bs-dropdown-spacer);
+}
+
+@media (min-width: 768px) {
+  .contenedorsearch {
+    display: flex;
+  }
+}
+.contenedorsearch {
+  width: 400px !important;
+  height: 50px !important;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.cardImgTop {
+  width: 574px;
+  height: 241.078px;
 }/*# sourceMappingURL=styles_second_page.css.map */

@@ -17,10 +17,11 @@
     position: relative; 
     height: 32px;
 }
-.container-aside{
-    width: 345.609px;
-    height: 442px;
-}
+// @media (max-width:768px){
+//   .container-aside{
+//     display:grid;
+//   }
+// }
 .image-document{
     position: relative;
     top:-15px;
@@ -72,6 +73,18 @@ $iconred: #DC1B26;
   height: 250px;
   justify-content: space-around;
   margin-left: 30px;
+}
+@media  (max-width:767px){
+  .aside-icon-bar{
+    display: flex;
+    position: fixed;
+    background-color: white;
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+    bottom:0px;
+    margin: 0px;
+  }
 }
   .aside-icon-container{
     display: flex;
@@ -191,6 +204,23 @@ $iconred: #DC1B26;
  
 */
 
+//! Cmabios Sebas anjkanv
+// .aside-icon-bar{
+//   position: fixed;
+//   background-color: white;
+//   flex-direction: row;
+//   width: 100%;
+//   height: 15%;
+//   bottom:0px;
+
+// }
+
+// .leftAside2{
+//   position: fixed;
+
+// }
+
+
 
 //! Cambios generales Sebas 
 
@@ -216,7 +246,17 @@ $iconred: #DC1B26;
   // display:none;
 }
 
-.cardImgTop{
-  width: 574px;
-  height: 241.078px;
+@media(min-width:768px){
+        
+  .leftAside2{
+      display: none;
+
+  }
+}
+
+// <!--Meter top96 y un heigth100%-->
+
+.leftAside2{
+  height: 100%;
+  top:96px;
 }

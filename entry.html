@@ -2,429 +2,374 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>DEV-TO-Clone</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/styles_second_page.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <title>DEV-TO-Clone</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/styles_second_page.css">
 </head>
 
 <body>
 
-    <!-----------HEADER-------------------------->
-    <header>
-        <nav class="">
-            <nav class="navbar fixed-top border-bottom p-0 ">
-                <div class="container-fluid d-flex justify-content-md-between container-nav">
-                    <div class="d-flex ">
-                        <button class="navbar-toggler d-md-none border border-light" type=" button"
-                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                            aria-controls="offcanvasNavbar">
-                            <span class="navbar-toggler-icon d-flex align-items-center"></span>
-                        </button>
-                        <a href="/index.html">
-                            <img class="" src="./images/dev_to_icon_136699.png" alt="">
-                        </a>
-                        
-                        <div class="input-group align-items-center w-auto contenedorsearch">
-                            <input type="text" class="form-control d-none h-75 border-end-0  d-md-flex"
-                                placeholder="Search..." aria-label="Search" aria-describedby="basic-addon1">
-                            <span class="input-group-text d-none d-md-flex h-75  " id="basic-addon1">
-                                <img class=" d-none d-md-block"
-                                    src="./images/magnifier_magnifying_glass_magnifying_view_search_icon_196570.png"
-                                    alt="">
-                            </span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <a href="#"><img class="p-1 d-md-none"src="./images/magnifier_magnifying_glass_magnifying_view_search_icon_196570.png" alt=""></a>
-                        <button type="button" class="btn btn-outline-primary  d-none d-md-block createpost">Create Post</button>
-                        <a href="#"><img class="m-3" src="./images/bell_simple_thin_icon_171966.png" alt=""></a>
-                        <div class="dropdown dropstart">
-                            <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <!-----------HEADER-------------------------->
+  <header>
+    <nav class="">
+      <nav class="navbar fixed-top border-bottom p-0 ">
+        <div class="container-fluid d-flex justify-content-md-between container-nav">
+          <div class="d-flex ">
+            <button class="navbar-toggler d-md-none border border-light" type=" button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon d-flex align-items-center"></span>
+            </button>
+            <a href="/index.html">
+              <img class="" src="./images/dev_to_icon_136699.png" alt="">
+            </a>
+
+            <div class="input-group align-items-center w-auto contenedorsearch">
+              <input type="text" class="form-control d-none h-75 border-end-0  d-md-flex" placeholder="Search..."
+                aria-label="Search" aria-describedby="basic-addon1">
+              <span class="input-group-text d-none d-md-flex h-75  " id="basic-addon1">
+                <img class=" d-none d-md-block"
+                  src="./images/magnifier_magnifying_glass_magnifying_view_search_icon_196570.png" alt="">
+              </span>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <a href="#"><img class="p-1 d-md-none"
+                src="./images/magnifier_magnifying_glass_magnifying_view_search_icon_196570.png" alt=""></a>
+            <button type="button" class="btn btn-outline-primary  d-none d-md-block createpost">Create Post</button>
+            <a href="#"><img class="m-3" src="./images/bell_simple_thin_icon_171966.png" alt=""></a>
+            <div class="dropdown dropstart">
+              <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                               Dropdown button
                             </button> -->
-                            <a class="" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> <img class="border border-dark rounded-circle " src="./images/avatar_people_adult_man_icon_159129.png" alt=""></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="#">BastianBV</a></li>
-                              <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                              <li><a class="dropdown-item" href="#">Create Post</a></li>
-                              <li><a class="dropdown-item" href="#">Reading list</a></li>
-                              <li><a class="dropdown-item" href="#">Settings</a></li>
-                              <li><a class="dropdown-item" href="#">Sing Out</a></li>
-                            </ul>
-                          </div>
-                        
-                    </div>
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DEV Community</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/home.png"
-                                        alt=""> <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/achive.png" alt=""><a class="nav-link active"
-                                        aria-current="page" href="#">Reading List</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/listing.png" alt=""> <a class="nav-link active"
-                                        aria-current="page" href="#">Listings</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/podcasts.png" alt=""> <a
-                                        class="nav-link active" aria-current="page" href="#">Podcasts</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/videos.png" alt=""> <a
-                                        class="nav-link active" aria-current="page" href="#">Videos</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/tags.png" alt=""> <a class="nav-link active"
-                                        aria-current="page" href="#">Tags</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/faq.png" alt=""> <a
-                                        class="nav-link active" aria-current="page" href="#">FAQ</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/shop.png" alt=""> <a
-                                        class="nav-link active" aria-current="page" href="#">Forem Shop</a>
-                                </li>
-                                <li class="nav-item  d-flex align-items-center justify-content-start">
-                                    <img src="images/sponsors.png" alt=""> <a class="nav-link active"
-                                        aria-current="page" href="#">Sponsors</a>
-                                </li>
-                                <li class="nav-item  d-flex align-items-center justify-content-start"> 
-                                    <img class="about1"src="images/about.png " alt=""> 
-                                    <a class="nav-link active"aria-current="page" href="#">About</a>
-                                    
-                                </li>
-                                <li class="nav-item  d-flex align-items-center justify-content-start">
-                                    <img src="images/contact.png" alt=""> <a
-                                        class="nav-link active" aria-current="page" href="#">Contact</a>
-                                </li>
-                                <li class="nav-item  d-flex align-items-center justify-content-start">
-                                    <img class="about1"src="images/guides.png" alt=""> <a
-                                        class="nav-link active" aria-current="page" href="#">Guides</a>
-                                </li>
-                                <br>
-                                <h5>Others</h5>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/thumb_up.png" alt=""> <a class="nav-link active"
-                                        aria-current="page" href="#">Code of Conduct</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/policy.png" alt=""> <a
-                                        class="nav-link active" aria-current="page" href="#">Privacy Policy</a>
-                                </li>
-                                <li class="nav-item d-flex align-items-center justify-content-start">
-                                    <img src="images/eyes.png" alt=""> <a class="nav-link active"
-                                        aria-current="page" href="#">Terms of use</a>
-                                </li>
-                            </ul>
-                            </li>
-                            </ul>
-                            <div class="d-flex justify-content-between mt-3 ">
-                                <img src="./images/TWITTER_icon-icons.com_65486.png" alt="">
-                                <img src="./images/Facebook_Square_icon-icons.com_49948.png" alt="">
-                                <img src="./images/Github_icon-icons.com_49946.png" alt="" href="#">
-                                <img src="./images/instagram_logo_icon_173753.png" alt="" href="#">
-                                <img src="./images/twitch_icon_137066.png" alt="" href="#">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </nav>
-    </header>
+              <a class="" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> <img
+                  class="border border-dark rounded-circle " src="./images/avatar_people_adult_man_icon_159129.png"
+                  alt=""></a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">BastianBV</a></li>
+                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                <li><a class="dropdown-item" href="#">Create Post</a></li>
+                <li><a class="dropdown-item" href="#">Reading list</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Sing Out</a></li>
+              </ul>
+            </div>
 
-    <!---------------END OF HEADER  -->
+          </div>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DEV Community</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/home.png" alt=""> <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/achive.png" alt=""><a class="nav-link active" aria-current="page" href="#">Reading
+                    List</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/listing.png" alt=""> <a class="nav-link active" aria-current="page"
+                    href="#">Listings</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/podcasts.png" alt=""> <a class="nav-link active" aria-current="page"
+                    href="#">Podcasts</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/videos.png" alt=""> <a class="nav-link active" aria-current="page"
+                    href="#">Videos</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/tags.png" alt=""> <a class="nav-link active" aria-current="page" href="#">Tags</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/faq.png" alt=""> <a class="nav-link active" aria-current="page" href="#">FAQ</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/shop.png" alt=""> <a class="nav-link active" aria-current="page" href="#">Forem
+                    Shop</a>
+                </li>
+                <li class="nav-item  d-flex align-items-center justify-content-start">
+                  <img src="images/sponsors.png" alt=""> <a class="nav-link active" aria-current="page"
+                    href="#">Sponsors</a>
+                </li>
+                <li class="nav-item  d-flex align-items-center justify-content-start">
+                  <img class="about1" src="images/about.png " alt="">
+                  <a class="nav-link active" aria-current="page" href="#">About</a>
 
-    
-    <div class="container-xxl principalContentPage2"> 
-        
+                </li>
+                <li class="nav-item  d-flex align-items-center justify-content-start">
+                  <img src="images/contact.png" alt=""> <a class="nav-link active" aria-current="page"
+                    href="#">Contact</a>
+                </li>
+                <li class="nav-item  d-flex align-items-center justify-content-start">
+                  <img class="about1" src="images/guides.png" alt=""> <a class="nav-link active" aria-current="page"
+                    href="#">Guides</a>
+                </li>
+                <br>
+                <h5>Others</h5>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/thumb_up.png" alt=""> <a class="nav-link active" aria-current="page" href="#">Code of
+                    Conduct</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/policy.png" alt=""> <a class="nav-link active" aria-current="page" href="#">Privacy
+                    Policy</a>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-start">
+                  <img src="images/eyes.png" alt=""> <a class="nav-link active" aria-current="page" href="#">Terms of
+                    use</a>
+                </li>
+              </ul>
+              </li>
+              </ul>
+              <div class="d-flex justify-content-between mt-3 ">
+                <img src="./images/TWITTER_icon-icons.com_65486.png" alt="">
+                <img src="./images/Facebook_Square_icon-icons.com_49948.png" alt="">
+                <img src="./images/Github_icon-icons.com_49946.png" alt="" href="#">
+                <img src="./images/instagram_logo_icon_173753.png" alt="" href="#">
+                <img src="./images/twitch_icon_137066.png" alt="" href="#">
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </nav>
+  </header>
+
+  <!---------------END OF HEADER  -->
+
+
+  <div class="container-xxl principalContentPage2">
+
     <div class="row">
 
-    <!--------- LEFT ASIDE  - BEGIN    ------>
-    <aside class="col-md-3 fixed-md-top col-lg-2 order-4 order-md-1 leftAside2 d-none d-md-flex">
-        
+      <!--------- LEFT ASIDE  - BEGIN    ------>
+
+      <aside class="col-md-2 col-lg-2 leftAside2 d-md-flex sticky-top"> <!--Meter top96 y un heigth100%-->
+
         <div class="aside-icon-bar">
           <div class="aside-icon-container">
-            <input
-              type="checkbox"
-              id="aside-icon-checkboxheart"
-              class="checkboxhider"
-            />
-            <label
-              for="aside-icon-checkboxheart"
-              class="checkedlabel"
-              id="checkboxheaartlabel"
-            >
-              <img
-                src="./images/SVG/heart.png" 
-                alt=""
-                class="aside-icon-default"
-              />
-              <img
-                
-                src="./images/SVG/hearthover.png"
-                alt=""
-                class="aside-icon-hover"
-              />
-              <img
-                src="./images/SVG/heartring1.png"
-                alt=""
-                class="bigring"
-              />
-              <img
-                src="./images/SVG/heartcheked.png"
-                alt=""
-                class="aside-icon-cheked"
-                id="heart"
-              />
+            <input type="checkbox" id="aside-icon-checkboxheart" class="checkboxhider" />
+            <label for="aside-icon-checkboxheart" class="checkedlabel" id="checkboxheaartlabel">
+              <img src="./images/SVG/heart.png" alt="" class="aside-icon-default" />
+              <img src="./images/SVG/hearthover.png" alt="" class="aside-icon-hover" />
+              <img src="./images/SVG/heartring1.png" alt="" class="bigring" />
+              <img src="./images/SVG/heartcheked.png" alt="" class="aside-icon-cheked" id="heart" />
             </label>
             <div class="asidecount"><small>15</small></div>
           </div>
           <div class="aside-icon-container">
-            <input
-              type="checkbox"
-              id="aside-icon-checkboxunicorn"
-              class="checkboxhider"
-            />
+            <input type="checkbox" id="aside-icon-checkboxunicorn" class="checkboxhider" />
             <label for="aside-icon-checkboxunicorn" class="checkedlabel">
-              <img
-                src="./images/SVG/unicorn.png"
-                alt=""
-                class="aside-icon-default"
-              />
-              <img
-                src="./images/SVG/unicornhover.png"
-                alt=""
-                class="aside-icon-hover"
-              />
-              <img
-                src="./images/SVG/ringunicorn.png"
-                alt=""
-                class="bigring"
-              />
-              <img
-                src="./images/SVG/unicorncheked.png"
-                alt=""
-                class="aside-icon-cheked"
-                id="unicorn"
-              />
+              <img src="./images/SVG/unicorn.png" alt="" class="aside-icon-default" />
+              <img src="./images/SVG/unicornhover.png" alt="" class="aside-icon-hover" />
+              <img src="./images/SVG/ringunicorn.png" alt="" class="bigring" />
+              <img src="./images/SVG/unicorncheked.png" alt="" class="aside-icon-cheked" id="unicorn" />
             </label>
             <div class="asidecount"><small>3</small></div>
           </div>
           <div class="aside-icon-container">
-            <input
-              type="checkbox"
-              id="aside-icon-checkboxsave"
-              class="checkboxhider"
-            />
+            <input type="checkbox" id="aside-icon-checkboxsave" class="checkboxhider" />
             <label for="aside-icon-checkboxsave" class="checkedlabel">
-              <img
-                src="./images/SVG/save.png"
-                alt=""
-                class="aside-icon-default"
-              />
-              <img
-                src="./images/SVG/savehover.png"
-                alt=""
-                class="aside-icon-hover"
-              />
-              <img
-                src="./images/SVG/savering1.png"
-                alt=""
-                class="bigring"
-              />
-              <img
-                src="./images/SVG/savercheked.png"
-                alt=""
-                class="aside-icon-cheked"
-                id="save"
-              />
+              <img src="./images/SVG/save.png" alt="" class="aside-icon-default" />
+              <img src="./images/SVG/savehover.png" alt="" class="aside-icon-hover" />
+              <img src="./images/SVG/savering1.png" alt="" class="bigring" />
+              <img src="./images/SVG/savercheked.png" alt="" class="aside-icon-cheked" id="save" />
             </label>
             <div class="asidecount"><small>10</small></div>
+          </div>
+
+          <div class="aside-icon-container">
+            <input type="" id="aside-icon-checkboxOptions" class="checkboxhider" />
+            <label for="aside-icon-checkboxOptions" class="checkedlabel">
+              <img src="styles/rods.svg" alt="" class="aside-icon-default" />
+            </label>
           </div>
         </div>
       </aside>
 
 
-    <!--------- LEFT ASIDE - END     ------>
+      <!--------- LEFT ASIDE - END     ------>
 
 
 
 
-    <!------------- MAIN (CENTRAL) - BEGIN -------------->
-    <main class="cotainer col-sm-12 m-0 col-md-9 col-lg-6 main order-1 bg-white">
-      <div class="image-graph">
-          <img src="/images/card_section_1.png" class="card-img-top  cardImgTop" alt="...">
+      <!------------- MAIN (CENTRAL) - BEGIN -------------->
+      <main class="cotainer col-xs-12 m-0 col-md-10 offset-md-2 col-xl-9 main bg-white">
+        <div class="image-graph">
+          <img src="/images/card_section_1.png" class="card-img-top  cardImgTop img-fluid" alt="...">
         </div>
         <div class="autor d-flex">
-            <div>
-                <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd" >
-            </div>
-            <div class="mx-4 autorProperties">
-                <p>
-                    <span class="fw-bold">Ben Halpern</span> <span class="text-secondary">for</span> The DEV Team
-                </p>
-                <p class="text-mini">
-                    Posted on Jun 15
-                </p>
-            </div>
+          <div>
+            <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd">
+          </div>
+          <div class="mx-4 autorProperties">
+            <p>
+              <span class="fw-bold">Ben Halpern</span> <span class="text-secondary">for</span> The DEV Team
+            </p>
+            <p class="text-mini">
+              Posted on Jun 15
+            </p>
+          </div>
         </div>
         <h1>People rarely use complicatd git commands on the weekend, and I have the data to prove it.</h1>
-        
+
         <p><span>#</span>git</p>
 
-        <p>Preamble: We've been running an experimental project to catalog good 
-            evergreen guides on DEV. Some initial work <a href="#">is available here</a> if you're 
-            curious. It's a low-key experiment so don't read too much into what's 
-            currently there. But that's an aside to the topic of this post.</p>
-        
+        <p>Preamble: We've been running an experimental project to catalog good
+          evergreen guides on DEV. Some initial work <a href="#">is available here</a> if you're
+          curious. It's a low-key experiment so don't read too much into what's
+          currently there. But that's an aside to the topic of this post.</p>
+
         <p>In tracking the project, I've been keeping an eye on traffic coming to these
-             guides based on how we organize things — and by starting with CSS and 
-             Git topics, I noticed something pretty stark: <span class="fw-bold">Weekend git traffic falls off wayyyyy more than CSS.</span></p>
+          guides based on how we organize things — and by starting with CSS and
+          Git topics, I noticed something pretty stark: <span class="fw-bold">Weekend git traffic falls off wayyyyy more
+            than CSS.</span></p>
 
-        <p>CSS traffic falls by about 40-50% on weekends. <span class="fw-bold">Git search traffic falls by about 80%.</span> 🤯</p>
-    
-        <p>This isn't exactly surprising — it's just interesting to see. On the weekend, 
-            work is most likely to be solo — and use of git, if at all, is most likely in a
-             pretty straightforward way with minimal branching.</p>
+        <p>CSS traffic falls by about 40-50% on weekends. <span class="fw-bold">Git search traffic falls by about
+            80%.</span> 🤯</p>
 
-        <p>Remember, this is not overall development, it is git relative to another pretty 
-            ubiquitous tool. I think it's unlikely people who have git as part of their flow
-             at all don't use it on their weekend projects — but I expect that they are 
-             way more likely to stay within their comfort zone and routine, and do not 
-             have to look up git commands nearly as often as in a collaborative work 
-             environment. </p>
-    
+        <p>This isn't exactly surprising — it's just interesting to see. On the weekend,
+          work is most likely to be solo — and use of git, if at all, is most likely in a
+          pretty straightforward way with minimal branching.</p>
+
+        <p>Remember, this is not overall development, it is git relative to another pretty
+          ubiquitous tool. I think it's unlikely people who have git as part of their flow
+          at all don't use it on their weekend projects — but I expect that they are
+          way more likely to stay within their comfort zone and routine, and do not
+          have to look up git commands nearly as often as in a collaborative work
+          environment. </p>
+
         <div class="d-flex justify-content-center">
-            <img src="./images/book.jpg" alt="Libro Nutria" class="book_image">
+          <img src="./images/book.jpg" alt="Libro Nutria" class="book_image">
         </div>
         <div class="happy_branching fw-bold fs-2">
-        Happy branching ❤️
+          Happy branching ❤️
         </div>
         <hr>
 
         <h2 class="pt-5">Discussion(11)</h2>
         <div>
-            
+
         </div>
 
 
         <div class="autor d-flex mx-4 pt-5">
-            <div>
-                <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd" >
-            </div>
-            <div class="mx-4 autorProperties">
-               <form action="">
-                <textarea rows="rows" cols="60" name="name" class="textArea">Add to the disscussion</textarea>
-               </form>
-            </div>
-        </div>
-
-
-    
-        <div class="autor d-flex mx-4 pt-5">
-            <div>
-                <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd" >
-            </div>
-            <div class="mx-4 autorProperties">
-                <div class="commentBox">
-                    <p class="pt-3"> raddevus <span class="text-secondary"> Jun 15</span></p>
-                    <p class="pt-3">
-                        I think Twitter graph would look similar, except the dip would be even more drastic on the weekends.</p>
-                        
-                        <p >The reason that is interesting is because :</p>
-                        
-                        <h2>My Theory</h2>
-                        <p>If people aren't at work they don't waste time on Twitter.</p>
-                        
-                        <h2>Main Point</h2>
-                        <p>Twitter is really just people wasting time -- but they aren't wasting valuable time, instead they are just wasting work time.
-                    </p>
-                </div>
-                <div>
-                    <img src="./images/like.png"> 6 likes
-                    <img src="./images/comment.png">Reply
-                </div>
-            </div>
+          <div>
+            <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd">
+          </div>
+          <div class="mx-4 autorProperties">
+            <form action="">
+              <textarea rows="rows" name="name" class="textArea">Add to the disscussion</textarea>
+            </form>
+          </div>
         </div>
 
 
 
-
-
-
-
         <div class="autor d-flex mx-4 pt-5">
-            <div>
-                <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd" >
-            </div>
-            <div class="mx-4 autorProperties">
-                <div class="commentBox">
-                    <p class="pt-3"> Manuer Artero Anguita <span class="text-secondary"> Jun 16 - Edited on Jun 16</span></p>
-                    <p class="pt-3">
-                        Maybe we can try a different reading?
+          <div>
+            <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd">
+          </div>
+          <div class="mx-4 autorProperties">
+            <div class="commentBox">
+              <p class="pt-3"> raddevus <span class="text-secondary"> Jun 15</span></p>
+              <p class="pt-3">
+                I think Twitter graph would look similar, except the dip would be even more drastic on the weekends.</p>
 
-                        Maybe the "standard" fall for any technology approach git numbers (80-90%) ... while CSS is the one that highlights (falling just 40-50%)? maybe because side-projects trend to need cool shadow-boxes ?
-                    </p>
-                </div>
-                <div>
-                    <img src="./images/like.png"> 6 likes
-                    <img src="./images/comment.png">Reply
-                </div>
+              <p>The reason that is interesting is because :</p>
+
+              <h2>My Theory</h2>
+              <p>If people aren't at work they don't waste time on Twitter.</p>
+
+              <h2>Main Point</h2>
+              <p>Twitter is really just people wasting time -- but they aren't wasting valuable time, instead they are
+                just wasting work time.
+              </p>
             </div>
+            <div>
+              <img src="./images/like.png"> 6 likes
+              <img src="./images/comment.png">Reply
+            </div>
+          </div>
         </div>
 
 
-   
 
 
-        
+
+
+
         <div class="autor d-flex mx-4 pt-5">
+          <div>
+            <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd">
+          </div>
+          <div class="mx-4 autorProperties">
+            <div class="commentBox">
+              <p class="pt-3"> Manuer Artero Anguita <span class="text-secondary"> Jun 16 - Edited on Jun 16</span></p>
+              <p class="pt-3">
+                Maybe we can try a different reading?
+
+                Maybe the "standard" fall for any technology approach git numbers (80-90%) ... while CSS is the one that
+                highlights (falling just 40-50%)? maybe because side-projects trend to need cool shadow-boxes ?
+              </p>
+            </div>
             <div>
-                <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd" >
+              <img src="./images/like.png"> 6 likes
+              <img src="./images/comment.png">Reply
             </div>
-            <div class="mx-4 autorProperties">
-                <div class="commentBox">
-                    <p class="pt-3"> drsensor <span class="text-secondary"> Jun 15</span></p>
-                    <p class="pt-3">
-                        I think they delegate their git problems and workflow to vscode (with or without extension). Think like solving merge conflict and staging hunk of code can be figure out by just right clicking. It even has notification when something goes wrong. The only thing that essential but can't be grasped by exploring the UI alone is how to gpg sign the commit.
-                    </p>
-                </div>
-                <div>
-                    <img src="./images/like.png"> 6 likes
-                    <img src="./images/comment.png">Reply
-                </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="autor d-flex mx-4 pt-5">
+          <div>
+            <img src="images/b5d7d157-a9a4-420e-b0ba-beaa4e843d7e.webp" class="avatar_entry_2nd">
+          </div>
+          <div class="mx-4 autorProperties">
+            <div class="commentBox">
+              <p class="pt-3"> drsensor <span class="text-secondary"> Jun 15</span></p>
+              <p class="pt-3">
+                I think they delegate their git problems and workflow to vscode (with or without extension). Think like
+                solving merge conflict and staging hunk of code can be figure out by just right clicking. It even has
+                notification when something goes wrong. The only thing that essential but can't be grasped by exploring
+                the UI alone is how to gpg sign the commit.
+              </p>
             </div>
+            <div>
+              <img src="./images/like.png"> 6 likes
+              <img src="./images/comment.png">Reply
+            </div>
+          </div>
         </div>
 
 
         <div class="mt-5">
-            <h1>Read next</h1>
+          <h1>Read next</h1>
         </div>
-        
-    </main>
-    <!------------- MAIN (CENTRAL) - END ----------------->
+
+      </main>
+      <!------------- MAIN (CENTRAL) - END ----------------->
 
 
-    <!----------  RIGHT ASIDE  - BEGIN  -->
-    <section class="d-lg-flex col-md-4 justify-content-end container-aside order-3 d-none">
-        <aside class="p-4">
-    
+      <!----------  RIGHT ASIDE  - BEGIN  -->
+
+      <!-- <section class="d-lg-flex col-md-4 col-xs-12 col-xl-3 justify-content-end container-aside order-3 d-none"> -->
+        <aside class="col-md-11 offset-md-2 col-xs-12 col-xl-3 justify-content-end container-aside order-3">
+
           <div class="card">
             <span class="-border2 border border-dark bg-black rounded-top"></span>
             <div class="bg-light card-body pt-0">
@@ -453,7 +398,7 @@
               </p>
               <p>6 oct 2019</p>
             </div>
-    
+
           </div>
           <div class="mt-4">
             <ul class="list-group">
@@ -470,44 +415,44 @@
               </li>
           </div>
         </aside>
-        </div>
-      </section>
-    
+      <!-- </section> -->
+    </div>
+
 
     <!----------  RIGHT ADIDE - END -->
+  </div>
+
+
+
+  <footer class="features-footer">
+    <div class="container d-flex flex-column align-items-center">
+      <!-- <div> -->
+      <p>
+        <a href="https://dev.to/">DEV Community</a> - A constructive and inclusive social network for
+        software developers. With you every step of your journey.
+      </p>
+      <!-- </div> -->
+      <!-- <div> -->
+      <p>
+        Built on
+        <a href="https://www.forem.com/">Forem</a> - the <a href="https://dev.to/t/opensource">open
+          source</a> software that powers <a href="https://dev.to/">DEV</a> and other inclusive
+        communities.
+      </p>
+      <!-- </div> -->
+      <!-- <div> -->
+      <p>
+        Made with love and <a href="https://dev.to/t/rails">Ruby on Rails</a>. DEV Community <span>©</span>
+        2016 - 2022.
+      </p>
+      <!-- </div> -->
     </div>
-    </div>
+  </footer>
 
-
-    <footer class="features-footer">
-        <div class="container d-flex flex-column align-items-center">
-            <!-- <div> -->
-            <p>
-                <a href="https://dev.to/">DEV Community</a> - A constructive and inclusive social network for
-                software developers. With you every step of your journey.
-            </p>
-            <!-- </div> -->
-            <!-- <div> -->
-            <p>
-                Built on
-                <a href="https://www.forem.com/">Forem</a> - the <a href="https://dev.to/t/opensource">open
-                    source</a> software that powers <a href="https://dev.to/">DEV</a> and other inclusive
-                communities.
-            </p>
-            <!-- </div> -->
-            <!-- <div> -->
-            <p>
-                Made with love and <a href="https://dev.to/t/rails">Ruby on Rails</a>. DEV Community <span>©</span>
-                2016 - 2022.
-            </p>
-            <!-- </div> -->
-        </div>
-    </footer>
-
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 
 </body>
 

@@ -1,102 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
-    <link href="https://cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.core.css">
     <link rel="stylesheet" href="/styles/styles.scss">
     <title>Document</title>
-    </head>
+</head>
+
 <body>
-  <nav class="navbar navbar-expand-lg bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-3" href="/">Home</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link fs-5" href="post.html">Posts</a>
-          <a class="nav-link fs-5" href="create_post.html">Create Post</a>
+    <!--NAVBAR-->
+    <header>
+        <nav class="">
+            <nav class="navbar fixed-top border-bottom p-0 ">
+                <div class="container-fluid d-flex justify-content-md-between container-nav">
+                    <div class="d-flex ">
 
-          <!-- <a class="nav-link disabled">Disabled</a> -->
+                        <a href="/index.html">
+                            <img class="" src="./images/dev_to_icon_136699.png" alt="">
+                        </a>
+                        Create Post
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+            </nav>
+        </nav>
+    </header>
+    <!--END NAVBAR-->
+    <style>
+        body {
+            background-color: rgb(158, 158, 158);
+        }
+    </style>
+
+    <body class="postsHolder">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <form class="mt-5 w-50">
+                    <!-- <div class="alerts_holder"></div> -->
+                    <div class="contenedorPost">
+                        <div class="mb-3 mt-3">
+                            <!--Este es el titulo-->
+                            <div>
+                                <div>
+                                    <label class="cursor-pointer " placeholder="Add a cover image">
+                                    </label>
+                                </div>
+                                <input type="text" class=" post_title_input" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="New post title here..." />
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <!--Estos son los Tags-->
+                                <input type="text" class=" post_tags_input" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Add up to 4 tags..." />
+                            </div>
+                        </div>
+
+
+                        <!-- Create the editor container -->
+                        <div id="editor" class=" post_body_input" placeholder="Write your post content here...">
+
+                        </div>
+
+
+
+
+                        <button type="button" class="btn btn-primary btn_create_post mt-2">
+                            Publish
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
-  <style>
-    body {
-      background-color: rgb(158, 158, 158);
-    }
-  </style>
-  <body class="postsHolder">
-    <div class="container">
-      <div class="row d-flex justify-content-center">
-        <form class="mt-5 w-50">
-          <h2 class="text-center">Crea tu post</h2>
-          <div class="alerts_holder"></div>
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
+        <!-- Initialize Quill editor -->
+        <script>
+            var quill = new Quill('#editor', {
+                theme: 'snow'
+            });
+        </script>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="/js/CRUD.js"></script>
+        <script src="https://cdn.quilljs.com/1.2.6/quill.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+    </body>
 
-          <div class="mb-3 mt-3">
-            <input
-              type="text"
-              class=" post_title_input"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Inserta el titulo"
-            />
-          </div>
-        
-          <div class="mb-3 mt-3">
-            <input
-              type="text"
-              class=" post_tags_input"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Inserta el titulo"
-            />
-          </div>
-          <div class="mb-3">
-
-            <textarea
-              class=" post_body_input"
-              name="exampleInputPassword1"
-              id="exampleInputPassword1"
-              cols="30"
-              rows="10"
-              placeholder="Inserta el cuerpo de tu post"
-            ></textarea>
-          </div>
-
-          <button type="button" class="btn btn-primary btn_create_post mt-2">
-            Publish
-          </button>
-          
-        </form>
-      </div>
-    </div>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="/js/CRUD.js"></script>
-    <script src="https://cdn.quilljs.com/1.2.6/quill.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
-</body>
 </html>

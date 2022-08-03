@@ -44,7 +44,7 @@ const renderPost = (postObj) => {
                     </div>
                     <div class="card-distribution">
                         <h2 class="card-title">
-                            <a href="" class="title-post-secondary">
+                            <a href="entry.html?postId${postObj.id}" class="title-post-secondary">
                                 ${postObj.title}
                             </a>
                         </h2>
@@ -100,8 +100,8 @@ const getData = (url) => {
 
 
 
-let queryURL = window.location.search
-let postId = queryURL.substring(8)
+//let queryURL = window.location.search
+//let postId = queryURL.substring(8)
 // let params = new URLSearchParams(window.location.search)
 // let postId = params.get('postId')
 let urlDataBase = 'https://devto-javascript-default-rtdb.firebaseio.com/post/.json'
@@ -127,4 +127,4 @@ for (let i in postToRender){
     postOnDataBase.push(postObj);
 }
 
-console.log(postOnDataBase)
+postOnDataBase.forEach(renderPost)

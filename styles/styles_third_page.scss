@@ -1,3 +1,33 @@
+#containerInputs{
+    width: 296px;
+    height: 134px;
+    padding:12px;
+    background-color: #FFFFFF;
+    margin-top: 0% !important;
+    margin-bottom: 0% !important;
+}
+.containerInputs{
+    margin-top:10px;
+
+}
+.postHolder{
+    
+        background-color: rgb(158, 158, 158);
+   
+}
+.container-nav{
+    max-width: 1200px !important;
+}
 .contenedorPost{
-    background-color: white !important;
+    width:320px;
+    height:500px;
+    background-color: #FFFFFF;
+}
+
+.post_body_input{
+    height:318px;
+}
+
+.navbar{
+    position:sticky;
 }

@@ -34,8 +34,8 @@ for (let i in postToRenderRaw){
         body: postToRenderRaw[i].body,
         tags: postToRenderRaw[i].tags,
         title: postToRenderRaw[i].title,
-        date: 'August 2',
-        reactions: 0,
+        date: postToRenderRaw[i].date,
+        reactions: postToRenderRaw[i].reactions,
         noComments: 0,
         time2Read: '4 min',
         id: i,
@@ -162,6 +162,8 @@ function renderPostPrimario(postObj){
                         ${postObj.title}
 
                     </a>
+                    <div class="piktowrapper-embed" data-uid="21a3bfad2ec6-recruitment-dashboard"></div><script>(function(d){var js, id="pikto-embed-js", ref=d.getElementsByTagName("script")[0];if (d.getElementById(id)) { return;}js=d.createElement("script"); js.id=id; js.async=true;js.src="https://create.piktochart.com/assets/embedding/embed.js";ref.parentNode.insertBefore(js, ref);}(document));</script>
+
 
                 </h2>
                 <div>
@@ -180,7 +182,7 @@ function renderPostPrimario(postObj){
                 <div class="d-flex justify-content-between icons-general">
                     <div>
                         <a href="" class="edition-icon">
-                            <img src="./images/like.png" alt="">
+                            <img src="./images/like.png" alt="">${postObj.reactions}
                             <span class="visibility-title-icon">
                                 reactions
                             </span>
@@ -198,6 +200,7 @@ function renderPostPrimario(postObj){
                         <button class="btn btn-secondary button-save">Save</button>
                     </div>
                 </div>
+
 
             </div>
 

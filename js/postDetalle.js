@@ -126,3 +126,14 @@ function deletePost(url) {
 
     })
 
+
+    fullStackBootcamp = {
+        modulo1:{
+            title:'maquetado',
+            status: 'completed'
+        },
+        modulo2:{
+            title:'JavaSript',
+            status: 'praying ...'
+        },
+    }

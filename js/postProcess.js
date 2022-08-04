@@ -16,6 +16,7 @@ postObj = {
     reactions: 0,
     noComments: 0,
     time2Read: '4 min',
+    autor: ''
 }
 
 // URL FOR DATABASE

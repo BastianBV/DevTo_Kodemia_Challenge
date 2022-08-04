@@ -38,10 +38,10 @@
  *
  *
  * Happy coding!!!!!!
-* Scroll infinito                                                            'Scroll, hacerle logica de mostrar otra card en ciertos px'
+* Scroll infinito                                     'Scroll, hacerle logica de mostrar otra card en ciertos px'
 * Busqueda                                                                   'Hacer un filtrado' 
 * Filtrado por tab de listado                                                '...'
-* Reaccion en listado a boton "save"                                         ' Hacer que el post al darle Save , aparezca Seved y con un mouse in se vea Unseave y el marco del post se vea azul'
+* Reaccion en listado a boton "save"           ' Hacer que el post al darle Save , aparezca Seved y con un mouse in se vea Unseave y el marco del post se vea azul'
 * Contabilidad real de reacciones                                            '...'
 * Comentarios y registo de los mismo en los posts                            '...'
 *

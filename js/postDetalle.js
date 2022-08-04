@@ -52,7 +52,7 @@ let htmlString = `
 <div class="image-graph">
           <img src="${post_.imageSrc}" class="card-img-top  cardImgTop img-fluid" alt="...">
         </div>
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center bottones-test">
         <a id="edit-post" href="./editPost.html?postId${post_.id}""> 
             <button type="button" class="btn btn-outline-warning">Edit Post</button>
         </a>    

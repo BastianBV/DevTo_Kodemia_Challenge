@@ -34,7 +34,7 @@ for (let i in postToRenderRaw){
         body: postToRenderRaw[i].body,
         tags: postToRenderRaw[i].tags,
         title: postToRenderRaw[i].title,
-        date: postToRenderRaw[i].date,
+        date: parsingDate(postToRenderRaw[i].date),
         reactions: postToRenderRaw[i].reactions,
         noComments: 0,
         time2Read: '4 min',
@@ -42,10 +42,13 @@ for (let i in postToRenderRaw){
         urlImage: postToRenderRaw[i].urlImage,
     }
     postOnDataBaseObjArray.push(postObj);
+    
 }
+
+parsingDate("2022-08-04T22:30:11.265Z")
 //postOnDataBase.forEach(console.log);
 post4Render = [...postOnDataBaseObjArray];
-console.log(post4Render);
+//console.log(post4Render);
 
 
 const renderAllPost=()=>{
@@ -60,8 +63,8 @@ const renderAllPost=()=>{
 
 renderAllPost(post4Render);
 
-console.log(postOnDataBaseObjArray);
-console.log(post4Render)
+//console.log(postOnDataBaseObjArray);
+//console.log(post4Render)
 
 
 ////////// FILTERING THE POSTS  
@@ -70,9 +73,9 @@ let string2search = '';
 searchInput.addEventListener('keyup',(event)=>{
  
     string2search = event.target.value;
-    console.log(string2search);
+    //(string2search);
     if(event.key === 'Enter' && string2search!==''){
-        console.log('Time to filter posts');
+        //console.log('Time to filter posts');
         filterPosts(string2search);
     }else if(post4Render.length !== postOnDataBaseObjArray.length-1 ){
         post4Render=[...postOnDataBaseObjArray];
@@ -83,7 +86,7 @@ searchInput.addEventListener('keyup',(event)=>{
 
 searchBtn.addEventListener('click',(event)=>{
     if(string2search!==''){
-        console.log('Time to filter posts');
+        //console.log('Time to filter posts');
         filterPosts(string2search);
     }else if(post4Render.length !== postOnDataBaseObjArray.length-1 ){
         post4Render=[...postOnDataBaseObjArray];
@@ -97,8 +100,8 @@ function filterPosts(string2search){
     if(postOnDataBaseObjArray.length != 0){
         
         post4Render = postOnDataBaseObjArray.filter((postObj)=>{
-            console.log('filtering...')
-            console.log(postObj);
+            //console.log('filtering...')
+            //console.log(postObj);
             /*let coincidenceOnBody = postObj.body.match(string2search);
             console.log(`body coincidence: ${coincidenceOnBody}`);
             if(coincidenceOnBody!==null){
@@ -120,13 +123,13 @@ function filterPosts(string2search){
             if((postObj.body.match(string2search)!==null)||
                (postObj.title.match(string2search)!==null)||
                (postObj.tags.match(string2search)!==null)){
-                console.log(`DENTRO DEL IF GENERAL`);
-                console.log(`Se puede PUSHEAR el objeto`);
+                //console.log(`DENTRO DEL IF GENERAL`);
+                //console.log(`Se puede PUSHEAR el objeto`);
                 return postObj;
             }
         });
     }
-    console.log(post4Render);
+    //console.log(post4Render);
     renderAllPost();
 }
 
@@ -138,7 +141,7 @@ function renderPostPrimario(postObj){
 
     const divPost = document.createElement('div');
     divPost.innerHTML = `
-    <div class="card mb-3">
+    <div id="${postObj.id}" class="card mb-3">
         <img src="${postObj.urlImage}" class="card-img-top" alt="...">
 
         <div class="card-body">
@@ -152,11 +155,11 @@ function renderPostPrimario(postObj){
 
                 <div class="profile-card">
                     <span class="name-profile">${postObj.autor} </span>
-                    <span class="date-profile">${postObj.date}Lorem ipsum</span>
+                    <span class="date-profile">${postObj.date}</span>
                 </div>
             </div>
 
-            <div class="card-distribution">
+            <div class="card-distribution clicked">
                 <h2 class="card-title">
                 <a href="entry.html?postId${postObj.id}" class="title-post">
                         ${postObj.title}
@@ -219,7 +222,7 @@ function renderPostPrimario(postObj){
 function renderPostSecundario(postObj){
     const divPost = document.createElement('div');
     divPost.innerHTML = `
-            <div class="card  mb-3">
+            <div id="${postObj.id}" class="card  mb-3">
                 <div class="card-body">
                     <div class="d-flex">
                         <div>
@@ -230,7 +233,7 @@ function renderPostSecundario(postObj){
 
                         <div class="profile-card">
                             <span class="name-profile">${postObj.author} </span>
-                            <span class="date-profile">${postObj.date} DAY</span>
+                            <span class="date-profile">${postObj.date} </span>
                         </div>
 
                     </div>
@@ -272,3 +275,81 @@ function renderPostSecundario(postObj){
 
     postContainer.append(divPost); 
 }   
+
+
+function parsingDate(dateStr){
+
+    postDate_01 = new Date(dateStr);
+
+    let milisecondsInitial = Date.parse("2022-08-04T22:30:11.265Z");
+    let currentDate = new Date(dateStr);
+    let milisecondsCurrent = Date.now();
+    let deltaTimeMS = milisecondsCurrent - milisecondsInitial;
+    let deltaTimeS = 0.001*(deltaTimeMS);
+    let deltaMinutos = deltaTimeS/60;
+    let deltaHoras = deltaMinutos/60;
+    let deltaDias = deltaHoras/24;
+
+    let monthPost = '';
+
+    switch(currentDate.getMonth()){
+        case 1:
+            monthPost = 'Jan';
+            break;
+        case 2:
+            monthPost = 'Feb';
+            break;
+        case 3:
+            monthPost = 'Mar';
+            break;
+        case 4:
+            monthPost = 'Apr';
+            break;
+        case 5:
+            monthPost = 'May';
+            break;
+        case 6:
+            monthPost = 'Jun';
+            break;
+        case 7:
+            monthPost = 'Jul';
+            break;
+        case 8:
+            monthPost = 'Aug';
+            break;
+        case 9:
+            monthPost = 'Sep';
+            break;
+        case 10:
+            monthPost = 'Oct';
+            break;
+        case 11:
+            monthPost = 'Nov';
+            break;
+        case 12:
+            monthPost = 'Dec';
+            break;
+    }
+
+    if (deltaMinutos < 0){
+        strDeltaTime = '( 0 minutos ago)';
+    }
+    else if(deltaMinutos < 60){
+        strDeltaTime = `( ${Math.floor(deltaMinutos)} mins ago )`;
+    }
+    else if(deltaMinutos > 60 && deltaHoras < 24){
+        strDeltaTime = `( ${Math.floor(deltaHoras)} hours ago )`;
+    }
+    else{
+        strDeltaTime = `( ${Math.floor(deltaDias)} days ago ) `;
+    }
+
+
+ 
+     
+    postDate = new Date()
+
+    let strDate = `${monthPost} ${currentDate.getDay()} ${strDeltaTime} `;
+    
+    return strDate;    
+}

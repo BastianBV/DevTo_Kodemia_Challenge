@@ -3,12 +3,14 @@ let postId = params.get('postId')*/
 
 let queryURL = window.location.search 
 let postId = queryURL.substring(8)
+console.log(postId)
 
 const mainContainer = document.querySelector('#main-container');
 
 
 /// URL FOR DATA BASE
 const firebaseUrlPost = `https://devto-javascript-default-rtdb.firebaseio.com/post/-${postId}.json`;
+console.log(firebaseUrlPost)
 
 // Reading from data base
 const getData = (url) => {
@@ -29,7 +31,10 @@ const getData = (url) => {
 // POST -> YA EN OJBETO LITERAL
 post_ = getData(firebaseUrlPost);
 post_.imageSrc = 'https://res.cloudinary.com/practicaldev/image/fetch/s--q9tO7oKk--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qbdvoa9yrkvdj7fbuxf.png'
-post_.autor = 'Filomeno Pérez'
+post_.autor = 'Filomeno Pérez';
+post_.id = postId;
+
+
 
 
 console.log(post_)
@@ -52,8 +57,8 @@ let htmlString = `
 <div class="image-graph">
           <img src="${post_.imageSrc}" class="card-img-top  cardImgTop img-fluid" alt="...">
         </div>
-        <div class="d-flex align-items-center bottones-test">
-        <a id="edit-post" href="./editPost.html?postId${post_.id}""> 
+        <div class="d-flex align-items-center">
+        <a id="edit-post" href="./editPost.html?postId-${post_.id}"> 
             <button type="button" class="btn btn-outline-warning">Edit Post</button>
         </a>    
 

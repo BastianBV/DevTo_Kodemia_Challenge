@@ -33,6 +33,7 @@ post_ = getData(firebaseUrlPost);
 post_.imageSrc = 'https://res.cloudinary.com/practicaldev/image/fetch/s--q9tO7oKk--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qbdvoa9yrkvdj7fbuxf.png'
 post_.autor = 'Filomeno Pérez';
 post_.id = postId;
+console.log(post_)
 
 
 
@@ -55,7 +56,7 @@ postObj = {
 
 let htmlString = `
 <div class="image-graph">
-          <img src="${post_.imageSrc}" class="card-img-top  cardImgTop img-fluid" alt="...">
+          <img src="${post_.urlImage}" class="card-img-top  cardImgTop img-fluid" alt="...">
         </div>
         <div class="d-flex align-items-center">
         <a id="edit-post" href="./editPost.html?postId-${post_.id}"> 

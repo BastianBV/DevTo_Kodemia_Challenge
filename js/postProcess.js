@@ -17,7 +17,7 @@ postObj = {
     noComments: 0,
     time2Read: '4 min',
     autor: '',
-    url_image: `https://res.cloudinary.com/practicaldev/image/fetch/s--T1U9sd9u--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/erq5g90br4ua0at7pjx8.png`
+    urlImage: `https://res.cloudinary.com/practicaldev/image/fetch/s--T1U9sd9u--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/erq5g90br4ua0at7pjx8.png`
 }
 
 // URL FOR DATABASE
@@ -28,7 +28,7 @@ const renderPostPrimario = (postObj) => {
     const divPost = document.createElement('div');
     divPost.innerHTML = `
     <div class="card mb-3">
-        <img src="${postObj.url_image}" class="card-img-top" alt="...">
+        <img src="${postObj.urlImage}" class="card-img-top" alt="...">
 
         <div class="card-body">
 
@@ -203,7 +203,7 @@ for (let i in postToRender){
         noComments: 0,
         time2Read: '4 min',
         id: i,
-        url_image: ''
+        urlImage: postToRender[i].urlImage,
     }
     postOnDataBase.push(postObj);
 }

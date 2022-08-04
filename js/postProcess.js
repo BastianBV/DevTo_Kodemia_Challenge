@@ -1,30 +1,141 @@
 //// DOM OBJECTS 
 const postContainer = document.querySelector('#home-tab-pane');
-const bloque = document.querySelector('#profile-tab-pane'); 
-
+const searchInput = document.querySelector('#search-bar');
+const searchBtn = document.querySelector('#basic-addon1');
 
 /// URL FOR DATA BASE
 const firebaseUrl = 'https://devto-javascript-default-rtdb.firebaseio.com/post/.json';
 
+// Reading from data base
+const getData = (url) => {
+    const httRequest = new XMLHttpRequest()
 
-// Object definition
-postObj = {
-    body: 'hola hola hola hola',
-    tags: 'javascript',
-    title: 'test post',
-    date: 'August 2',
-    reactions: 0,
-    noComments: 0,
-    time2Read: '4 min',
-    autor: '',
-    urlImage: `https://res.cloudinary.com/practicaldev/image/fetch/s--T1U9sd9u--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/erq5g90br4ua0at7pjx8.png`
+    let result = []
+    httRequest.onload = (data) => {
+        result = JSON.parse(data.target.responseText)
+    }
+
+    httRequest.open("GET", url, false)
+
+    httRequest.send()
+
+    return result
 }
 
-// URL FOR DATABASE
-//RENDER POST PRINCIPAL
-const renderPostPrimario = (postObj) => {
+// Array with all the posts on the data base 
+let postToRenderRaw = getData(firebaseUrl);
 
-    const bloque = document.querySelector('#profile-tab-pane'); 
+
+//creando lista de Posts
+const postOnDataBaseObjArray = [];       
+let post4Render = [];
+for (let i in postToRenderRaw){
+    postObj = {
+        body: postToRenderRaw[i].body,
+        tags: postToRenderRaw[i].tags,
+        title: postToRenderRaw[i].title,
+        date: postToRenderRaw[i].date,
+        reactions: postToRenderRaw[i].reactions,
+        noComments: 0,
+        time2Read: '4 min',
+        id: i,
+        urlImage: postToRenderRaw[i].urlImage,
+    }
+    postOnDataBaseObjArray.push(postObj);
+}
+//postOnDataBase.forEach(console.log);
+post4Render = [...postOnDataBaseObjArray];
+console.log(post4Render);
+
+
+const renderAllPost=()=>{
+    postContainer.innerHTML='';
+    renderPostPrimario(post4Render.shift());
+
+    if(post4Render.length!==0){
+        post4Render.forEach(renderPostSecundario);
+    }
+
+};
+
+renderAllPost(post4Render);
+
+console.log(postOnDataBaseObjArray);
+console.log(post4Render)
+
+
+////////// FILTERING THE POSTS  
+let string2search = '';
+
+searchInput.addEventListener('keyup',(event)=>{
+ 
+    string2search = event.target.value;
+    console.log(string2search);
+    if(event.key === 'Enter' && string2search!==''){
+        console.log('Time to filter posts');
+        filterPosts(string2search);
+    }else if(post4Render.length !== postOnDataBaseObjArray.length-1 ){
+        post4Render=[...postOnDataBaseObjArray];
+        renderAllPost();
+    }
+})
+
+
+searchBtn.addEventListener('click',(event)=>{
+    if(string2search!==''){
+        console.log('Time to filter posts');
+        filterPosts(string2search);
+    }else if(post4Render.length !== postOnDataBaseObjArray.length-1 ){
+        post4Render=[...postOnDataBaseObjArray];
+        renderAllPost();
+    }
+     
+});
+
+function filterPosts(string2search){
+    post4Render = [];
+    if(postOnDataBaseObjArray.length != 0){
+        
+        post4Render = postOnDataBaseObjArray.filter((postObj)=>{
+            console.log('filtering...')
+            console.log(postObj);
+            /*let coincidenceOnBody = postObj.body.match(string2search);
+            console.log(`body coincidence: ${coincidenceOnBody}`);
+            if(coincidenceOnBody!==null){
+                console.log('PUSH EL OBJETO')
+            }
+
+            let coincidenceOnTitle = postObj.title.match(string2search);
+            console.log(`body coincidence: ${coincidenceOnTitle}`);
+            if(coincidenceOnTitle!==null){
+                console.log('PUSH EL OBJETO')
+            }
+
+            let coincidenceOnTags = postObj.tags.match(string2search);
+            console.log(`body coincidence: ${coincidenceOnTags}`);
+            if(coincidenceOnTags!==null){
+                console.log('PUSH EL OBJETO')
+            }*/
+
+            if((postObj.body.match(string2search)!==null)||
+               (postObj.title.match(string2search)!==null)||
+               (postObj.tags.match(string2search)!==null)){
+                console.log(`DENTRO DEL IF GENERAL`);
+                console.log(`Se puede PUSHEAR el objeto`);
+                return postObj;
+            }
+        });
+    }
+    console.log(post4Render);
+    renderAllPost();
+}
+
+
+
+
+//RENDER POST PRINCIPAL
+function renderPostPrimario(postObj){
+
     const divPost = document.createElement('div');
     divPost.innerHTML = `
     <div class="card mb-3">
@@ -51,6 +162,8 @@ const renderPostPrimario = (postObj) => {
                         ${postObj.title}
 
                     </a>
+                    <div class="piktowrapper-embed" data-uid="21a3bfad2ec6-recruitment-dashboard"></div><script>(function(d){var js, id="pikto-embed-js", ref=d.getElementsByTagName("script")[0];if (d.getElementById(id)) { return;}js=d.createElement("script"); js.id=id; js.async=true;js.src="https://create.piktochart.com/assets/embedding/embed.js";ref.parentNode.insertBefore(js, ref);}(document));</script>
+
 
                 </h2>
                 <div>
@@ -69,7 +182,7 @@ const renderPostPrimario = (postObj) => {
                 <div class="d-flex justify-content-between icons-general">
                     <div>
                         <a href="" class="edition-icon">
-                            <img src="./images/like.png" alt="">
+                            <img src="./images/like.png" alt="">${postObj.reactions}
                             <span class="visibility-title-icon">
                                 reactions
                             </span>
@@ -88,6 +201,7 @@ const renderPostPrimario = (postObj) => {
                     </div>
                 </div>
 
+
             </div>
 
 
@@ -96,15 +210,13 @@ const renderPostPrimario = (postObj) => {
             
             `
 
-    postContainer.insertBefore(divPost,bloque);
+    postContainer.append(divPost); 
+
 }
 
 
-
-
 // RENDER POST SECUDNARIOS
-const renderPostSecundario = (postObj) => {
-    const bloque = document.querySelector('#profile-tab-pane'); 
+function renderPostSecundario(postObj){
     const divPost = document.createElement('div');
     divPost.innerHTML = `
             <div class="card  mb-3">
@@ -158,62 +270,5 @@ const renderPostSecundario = (postObj) => {
             </div>
             `
 
-    postContainer.insertBefore(divPost,bloque);
+    postContainer.append(divPost); 
 }   
-
-
-
-// Reading from data base
-const getData = (url) => {
-    const httRequest = new XMLHttpRequest()
-
-    let result = []
-    httRequest.onload = (data) => {
-        result = JSON.parse(data.target.responseText)
-    }
-
-    httRequest.open("GET", url, false)
-
-    httRequest.send()
-
-    return result
-}
-
-
-
-//let queryURL = window.location.search
-//let postId = queryURL.substring(8)
-// let params = new URLSearchParams(window.location.search)
-// let postId = params.get('postId')
-let urlDataBase = 'https://devto-javascript-default-rtdb.firebaseio.com/post/.json'
-
-let postToRender = getData(urlDataBase);
-
-console.log(postToRender);
-
-//creando lista de Posts
-const postOnDataBase = []
-for (let i in postToRender){
-    postObj = {
-        body: postToRender[i].body,
-        tags: postToRender[i].tags,
-        title: postToRender[i].title,
-        date: 'August 2',
-        reactions: 0,
-        noComments: 0,
-        time2Read: '4 min',
-        id: i,
-        urlImage: postToRender[i].urlImage,
-    }
-    postOnDataBase.push(postObj);
-}
-
-
-const renderAllPost=()=>{
-    renderPostPrimario(postOnDataBase.shift());
-
-    postOnDataBase.forEach(renderPostSecundario);
-
-};
-
-renderAllPost();

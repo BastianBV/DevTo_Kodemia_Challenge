@@ -16,16 +16,16 @@
 <body>
     <!--NAVBAR-->
     <header>
-        <nav>
             <nav class="navbar fixed-top border-bottom p-0 row">
-                <div class="container-fluid d-flex justify-content-md-end container-nav">
-                    <div class="d-flex align-items-center">
-
+                <div class="container-fluid d-flex container-nav">
+                    <div class="d-flex align-items-center justify-content-md-start">
+                        
                         <a href="/index.html" class="devTo">
                             <img class="" src="./images/dev_to_icon_136699.png" alt="">
                         </a>
                         <p class="textCreate">Create Post</p>
                     </div>
+                    <div class="d-flex align-items-center">
                     <li class="elipses">
                         <button class="edit">
                             Edit
@@ -38,8 +38,8 @@
                     </li>
                     <button type="button" class="btn-close" aria-label="Close"></button>
                 </div>
+                </div>
             </nav>
-        </nav>
     </header>
     <!--END NAVBAR-->
     <div class="container-fluid containerInputs">
@@ -49,9 +49,9 @@
             <div class="contenedorPost">
                 <div class="" id="containerInputs">
                     <!--Esto inserta URL imagen-->
-                    <div>
+                    <div class="addImage">
                         <input type="text" class="post_urlImage_input rounded" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" placeholder="Add a image" />
+                            aria-describedby="emailHelp" placeholder="Add a cover image" />
                     </div>
                     <!--Este es el titulo-->
                     <div>
@@ -71,18 +71,19 @@
 
                 </div>
 
-
-
-                <button type="button" class="btn btn-primary btn_create_post mt-2">
-                    Publish
-                </button>
-
-                <button type="button" class="btn btn-primary btn_delete_post mt-2">
-                    Borrar
-                </button>
             </div>
         </div>
     </div>
+    <div class="containerButtons">       
+
+   <button type="button" class="btn btn-primary btn_create_post mt-2">
+       Publish
+   </button>
+
+   <button type="button" class="btn btn-primary btn_delete_post mt-2">
+       Borrar
+   </button>
+</div>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 

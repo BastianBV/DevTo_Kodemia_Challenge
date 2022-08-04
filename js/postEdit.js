@@ -79,12 +79,15 @@ updateBtn.addEventListener('click',(event)=>{
         console.log(error)
     });
 
+    window.location.href = `./index.html`
+
+
 });
     
 deleteBtn.addEventListener('click',(event)=>{
     console.log('Dentro de DELETE POST');
     
-    fetch(url, {
+    fetch(firebaseUrlPost, {
         method:"DELETE",
         headers: {"Content-type": "application/json; charset=UTF-8"}
     })
@@ -98,6 +101,8 @@ deleteBtn.addEventListener('click',(event)=>{
         console.log(error)
     })
     console.log('deletion complete');
+
+    window.location.href = `./index.html`
     
 
 });

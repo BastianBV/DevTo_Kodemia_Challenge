@@ -46,12 +46,20 @@
   
   .post_title_input{
     border: 0;
-    width: 446.39px;
+    width: 288px;
     height:52px;
   }
   .post_title_input::placeholder{
-    font-size: 40px;
+    font-size: 30px;
     color:#575757;
+  }
+  @media (min-width : 768px){
+    .post_title_input{
+        width: 446.39px;
+    }
+    .post_title_input::placeholder{
+        font-size: 40px;
+    }
   }
   .post_tags_input{
     border: 0;
@@ -129,4 +137,8 @@
 }
 .addImage{
     margin-bottom:20px;
+    width:100%;
+}
+.bottones-test{
+    margin-top: 20px;
 }

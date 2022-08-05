@@ -37,7 +37,7 @@ for (let i in postToRenderRaw){
         date: parsingDate(postToRenderRaw[i].date),
         reactions: postToRenderRaw[i].reactions,
         noComments: 0,
-        time2Read: '4 min',
+        time2Read: time2Read(postToRenderRaw[i].body),
         id: i,
         urlImage: postToRenderRaw[i].urlImage,
     }
@@ -331,6 +331,8 @@ function parsingDate(dateStr){
             break;
     }
 
+    let strDeltaTime = '';
+
     if (deltaMinutos < 0){
         strDeltaTime = '( 0 minutos ago)';
     }
@@ -352,4 +354,11 @@ function parsingDate(dateStr){
     let strDate = `${monthPost} ${currentDate.getDay()} ${strDeltaTime} `;
     
     return strDate;    
+}
+
+
+function time2Read(str2Count){
+    console.log(str2Count);
+    noWords = str2Count.split(" ").length;
+    return `${Math.floor(noWords / 200)} minutes`;
 }

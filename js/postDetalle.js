@@ -9,7 +9,7 @@ const mainContainer = document.querySelector('#main-container');
 
 
 /// URL FOR DATA BASE
-const firebaseUrlPost = `https://devto-javascript-default-rtdb.firebaseio.com/post/-${postId}.json`;
+const firebaseUrlPost = `http://localhost:8080/post/${postId}`;
 console.log(firebaseUrlPost)
 
 // Reading from data base
@@ -30,36 +30,24 @@ const getData = (url) => {
 
 // POST -> YA EN OJBETO LITERAL
 post_ = getData(firebaseUrlPost);
-post_.imageSrc = 'https://res.cloudinary.com/practicaldev/image/fetch/s--q9tO7oKk--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qbdvoa9yrkvdj7fbuxf.png'
-post_.autor = 'Filomeno Pérez';
-post_.id = postId;
-console.log(post_)
+//post_.imageSrc = 'https://res.cloudinary.com/practicaldev/image/fetch/s--q9tO7oKk--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qbdvoa9yrkvdj7fbuxf.png'
+//post_.autor = 'Filomeno Pérez';
+//post_.id = postId;
 
 
 
 
-console.log(post_)
 
-postObj = {
-    body: 'hola hola hola hola',
-    tags: 'javascript',
-    title: 'test post',
-    date: 'August 2',
-    reactions: 0,
-    noComments: 0,
-    time2Read: '4 min',
-    autor: '',
-    imageSrc: '',
-}
+console.log("posts", post_)
 
 
 
 let htmlString = `
 <div class="image-graph">
-          <img src="${post_.urlImage}" class="card-img-top  cardImgTop img-fluid" alt="...">
+          <img src="${post_.post.urlImage}" class="card-img-top  cardImgTop img-fluid" alt="...">
         </div>
         <div class="d-flex align-items-center">
-        <a id="edit-post" href="./editPost.html?postId-${post_.id}"> 
+        <a id="edit-post" href="./editPost.html?postId-${post_.post._id}"> 
             <button type="button" class="btn btn-outline-warning">Edit Post</button>
         </a>    
 
@@ -73,18 +61,18 @@ let htmlString = `
           </div>
           <div class="mx-4 autorProperties">
             <p>
-              <span class="fw-bold">${post_.autor}</span> <span class="text-secondary">for</span> The DEV Team
+              <span class="fw-bold">${post_.post.author}</span> <span class="text-secondary">for</span> The DEV Team
             </p>
             <p class="text-mini">
-              ${post_.date}
+              ${post_.post.startDate}
             </p>
           </div>
         </div>
-        <h1>${post_.title}</h1>
+        <h1>${post_.post.title}</h1>
 
-        <p><span>#</span>${post_.tags}</p>
+        <p><span>#</span>${post_.post.tags}</p>
 
-        ${post_.body}
+        ${post_.post.body}
 ` 
 
 mainContainer.innerHTML = htmlString;

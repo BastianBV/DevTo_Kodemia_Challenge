@@ -24,28 +24,29 @@ const getData = (url) => {
 
 // Array with all the posts on the data base 
 let postToRenderRaw = getData(firebaseUrl);
-
+console.log("posts", postToRenderRaw)
 
 //creando lista de Posts
 const postOnDataBaseObjArray = [];       
 let post4Render = [];
-for (let i in postToRenderRaw){
+for (let i in postToRenderRaw.posts){
+    console.log("reactions", postToRenderRaw.posts[i].reactions)
     postObj = {
-        body: postToRenderRaw[i].body,
-        tags: postToRenderRaw[i].tags,
-        title: postToRenderRaw[i].title,
-        date: parsingDate(postToRenderRaw[i].date),
-        reactions: postToRenderRaw[i].reactions,
+        body: postToRenderRaw.posts[i].body,
+        tags: postToRenderRaw.posts[i].tags,
+        title: postToRenderRaw.posts[i].title,
+        date: parsingDate(postToRenderRaw.posts[i].startDate),
+        reactions: postToRenderRaw.posts[i]?.reactions?.likes,
         noComments: 0,
-        time2Read: time2Read(postToRenderRaw[i].body),
-        id: i,
-        urlImage: postToRenderRaw[i].urlImage,
+        time2Read: time2Read(postToRenderRaw.posts[i].body),
+        id: postToRenderRaw.posts[i]._id,
+        urlImage: postToRenderRaw.posts[i].urlImage,
     }
     postOnDataBaseObjArray.push(postObj);
     
 }
 
-parsingDate("2022-08-04T22:30:11.265Z")
+//parsingDate("2022-08-04T22:30:11.265Z")
 //postOnDataBase.forEach(console.log);
 post4Render = [...postOnDataBaseObjArray];
 //console.log(post4Render);
@@ -161,7 +162,7 @@ function renderPostPrimario(postObj){
 
             <div class="card-distribution clicked">
                 <h2 class="card-title">
-                <a href="entry.html?postId${postObj.id}" class="title-post">
+                <a href="entry.html?postId=${postObj._id}" class="title-post">
                         ${postObj.title}
 
                     </a>
@@ -281,7 +282,7 @@ function parsingDate(dateStr){
 
     postDate_01 = new Date(dateStr);
 
-    let milisecondsInitial = Date.parse("2022-08-04T22:30:11.265Z");
+    let milisecondsInitial = Date.parse(dateStr);
     let currentDate = new Date(dateStr);
     let milisecondsCurrent = Date.now();
     let deltaTimeMS = milisecondsCurrent - milisecondsInitial;

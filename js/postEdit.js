@@ -1,4 +1,4 @@
-console.log('HOLA desde postEdit')
+
 
 //let createUpdate = document.querySelector('.btn_update_post')
 const inputTitlePost = document.querySelector('.post_title_input')
@@ -9,12 +9,12 @@ const updateBtn      = document.querySelector('#updateBtn');
 const deleteBtn      = document.querySelector('#deleteBtn'); 
 
 let queryURL = window.location.search 
-let postId = `-${queryURL.substring(8)}`
+let postId = `${queryURL.substring(8)}`
 
 console.log(postId)
 
 /// URL FOR DATA BASE
-const firebaseUrlPost = `https://devto-javascript-default-rtdb.firebaseio.com/post/${postId}.json`;
+const firebaseUrlPost = `http://localhost:8080/post/${postId}`;
 console.log(firebaseUrlPost)
 
 // Reading from data base
@@ -36,32 +36,28 @@ const getData = (url) => {
 
 // POST -> YA EN OJBETO LITERAL
 post_ = getData(firebaseUrlPost);
-post_.imageSrc = 'https://res.cloudinary.com/practicaldev/image/fetch/s--q9tO7oKk--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qbdvoa9yrkvdj7fbuxf.png'
-post_.autor = 'Filomeno Pérez';
-post_.id = postId;
 
-console.log(post_)
 
 document.addEventListener('DOMContentLoaded',()=>{
-    inputTitlePost.value = post_.title
-    quill.root.innerHTML = post_.body
-    inputTagsPost.value  = post_.tags
-    inputUrlImage.value  = post_.imageSrc
+    inputTitlePost.value = post_.post.title
+    quill.root.innerHTML = post_.post.body
+    inputTagsPost.value  = post_.post.tags
+    inputUrlImage.value  = post_.post.urlImage
 
 })
 
 updateBtn.addEventListener('click',(event)=>{
-    post_.title    = inputTitlePost.value;
-    post_.body     = quill.root.innerHTML;
-    post_.tags     = inputTagsPost.value;
-    post_.imageSrc = inputUrlImage.value;
+    post_.post.title    = inputTitlePost.value;
+    post_.post.body     = quill.root.innerHTML;
+    post_.post.tags     = inputTagsPost.value;
+    post_.post.urlImage = inputUrlImage.value;
     console.log(post_);
 
     const postToUpdate = {
-        urlImage: post_.imageSrc,
-        title: post_.title,
-        body: post_.body,
-        tags: post_.tags
+        urlImage: post_.post.urlImage,
+        title: post_.post.title,
+        body: post_.post.body,
+        tags: post_.post.tags
     }
 
     fetch(firebaseUrlPost, {

@@ -8,7 +8,7 @@ let passwordLogin = '';
 let  emailLogin  = '';
 const postToInsert = {}
 
-const urlBack = 'http://localhost:8080/auth'
+const urlBackLogin = 'http://localhost:8080/auth'
 
 
 loginBtnDOM.addEventListener("click",(e)=>{
@@ -20,7 +20,7 @@ loginBtnDOM.addEventListener("click",(e)=>{
         postToInsert["email"] = emailLogin;
         postToInsert["password"] = passwordLogin;
 
-        fetch(urlBack,{
+        fetch(urlBackLogin,{
             method: 'POST',
             body: JSON.stringify(postToInsert),
             headers: {'content-type': 'application/json; charset=UTF-8'}

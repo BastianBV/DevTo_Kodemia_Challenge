@@ -45,9 +45,9 @@
   background-image: url("../images/fbHover.svg");
 }
 
-.git {
+/*.git {
   background-image: url("../images/gitBlack.svg");
-}
+}*/
 
 .git:hover {
   background-image: url("../images/gitHover.svg");

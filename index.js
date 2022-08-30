@@ -1,45 +1,17 @@
-// const button = document.querySelector("#iniciar-sesion")
-// const emailInput = document.querySelector("#email")
-// const passwordInput = document.querySelector("#password")
+console.log("hola");
 
-// // Constants
-// const URL = "http://localhost:8080/auth"
-// // OnClick
-// button.addEventListener("click", async (event)  => {
-//   event.preventDefault()
+const LogInBtn =  document.querySelector(".LogInBtn");
+const CreatePostBtn =  document.querySelector(".CreatePostBtn");
 
-//   console.log("email :", emailInput.value)
-//   console.log("password :", passwordInput.value)
+let keysInLocal = window.localStorage
 
-//   const data = {
-//     email: emailInput.value,
-//     password: passwordInput.value
-//   }
+console.log(keysInLocal)
 
-//   // Fetch
-//   const response = await fetch(URL, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify(data)
-//   })
-
-//   const jsonData = await response.json()
-//   console.log("jsonData : ", jsonData)
-
-//   // No fue exitoso, no estas autorizado
-//   if(!jsonData.success) {
-//     alert("Ingresaste mal tus datos")
-//   } else {
-//     // Si estas autorizado
-//     // LocalStorage
-//     localStorage.setItem("token", jsonData.data.token)
-
-//     // Navegar
-//     window.location.href = "/profile"
-//   }
-
-
-  
-// })
+if(keysInLocal.token){//token exists
+    LogInBtn.classList.add('d-none');
+    CreatePostBtn.classList.remove('d-none');
+}
+else{
+    LogInBtn.classList.remove('d-none');
+    CreatePostBtn.classList.add('d-none');
+}

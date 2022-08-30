@@ -91,4 +91,40 @@ En el boton Publish agregar un
                                             body:'',
                                             userId:''
                                         }
-                                    });
+                                    }
+
+
+
+<!-- <main id="main-container" class="cotainer col-xs-12 m-0 col-md-6 offset-md-2 col-xl-6 main bg-white">
+<aside class="col-md-4 col-xs-12 col-xl-4  justify-content-end container-aside order-3"> -->
+
+
+
+let checkboxhider = document.getElementById('aside-icon-checkboxheart')
+let asidecount = document.getElementById('asidecount')
+let contador = 0;
+
+checkboxhider.onclick = function(){
+
+    contador++;
+    asidecount.textContent = contador;
+}
+
+console.log(checkboxhider)
+
+
+
+
+
+
+// checkboxhider.addEventListener('click', ()=>{
+
+//     // let likes;
+//     if(checkboxhider){
+//         asidecount = asidecount + 1
+//     } else {
+//         asidecount = asidecount - 1
+//     }
+//     return asidecount; 
+// })
+// console.log(checkboxhider)

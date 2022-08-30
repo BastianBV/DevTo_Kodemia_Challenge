@@ -1,14 +1,8 @@
 #containerInputs{
-    width: 296px;
-    height: 134px;
     padding:12px;
     background-color: #FFFFFF;
     margin-top: 0% !important;
     margin-bottom: 0% !important;
-}
-.containerInputs{
-    margin-top:10px;
-
 }
 .postHolder{
     
@@ -19,19 +13,22 @@
     max-width: 1200px !important;
 }
 .contenedorPost{
-    width:320px;
-    height:500px;
+    // width:320px;
+    // height:500px;
     background-color: #FFFFFF;
 }
 
-.post_body_input{
-    height:318px;
+#editor{
+    // width:320px;
+    height:250px;
 }
 
 .navbar{
     background-color: #f9f9f9;
     position:sticky;
     height: 56px;
+   min-width:320px;
+   max-width: 100%;
 }
 
 .post_urlImage_input{
@@ -49,15 +46,28 @@
   
   .post_title_input{
     border: 0;
+    width: 288px;
+    height:52px;
   }
-  
+  .post_title_input::placeholder{
+    font-size: 30px;
+    color:#575757;
+  }
+  @media (min-width : 768px){
+    .post_title_input{
+        width: 446.39px;
+    }
+    .post_title_input::placeholder{
+        font-size: 40px;
+    }
+  }
   .post_tags_input{
     border: 0;
   }
   .ql-snow{
     background-color: #f9f9f9 ;
     border: 0 !important ;
-    width: 350px !important;
+    // width: 350px !important;
    
   }
   .post_body_input{
@@ -80,11 +90,13 @@
   .devTo{
    display:none;
   }
+
   @media (min-width :768px){
-    .devTo{
-        display:flex;
-       }
-  }
+      .devTo{
+          display:flex;
+          position: relative;
+        }
+    }
   .textCreate{
     display:none;
   }
@@ -104,4 +116,29 @@
   }
  .post_body_input{
     border:0;
+    
  }
+
+ .containerButtons{
+    position:fixed;
+    bottom:0px;
+    background-color:#f9f9f9;
+    width: 320px;
+
+}
+.btn_create_post{
+    margin-bottom: 5px;
+}
+.btn_delete_post{
+    margin-bottom: 5px; 
+    background-color: #f9f9f9;
+    color: #000000;
+    border-color: #f9f9f9;
+}
+.addImage{
+    margin-bottom:20px;
+    width:100%;
+}
+.bottones-test{
+    margin-top: 20px;
+}

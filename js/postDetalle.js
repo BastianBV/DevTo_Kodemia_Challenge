@@ -91,7 +91,12 @@ deletePostElelement.addEventListener('click',(event)=>{
   
 });
 
-
+const counterLike = () =>{
+    let asidecount = document.querySelector('#asidecount')
+    asidecount.textContent =  post_.post.reactions.likes;
+}
+ 
+   counterLike() 
 
 function deletePost(url) {
     console.log('Dentro de DELETE POST')

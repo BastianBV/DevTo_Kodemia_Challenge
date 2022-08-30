@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     inputBodyPost.value = ''
     inputTagsPost.value = ''
     inputUrlImage.value = ''
+    inputReactions.value= ''
 })
 
 
@@ -16,8 +17,9 @@ let inputTagsPost = document.querySelector('.post_tags_input')
 let inputBodyPost = document.querySelector('.post_body_input')
 let postToRender = ('https://devto-javascript-default-rtdb.firebaseio.com/.json')
 let postsHolder = document.querySelector('.postsHolder')
+let inputReactions = ('http://localhost:8080/post/:id/likes')
 
-console.log(inputUrlImage.value)
+// console.log(inputUrlImage.value)
         
         
         createBoton.addEventListener('click', (e) => {
@@ -27,12 +29,14 @@ console.log(inputUrlImage.value)
                let title = inputTitlePost.value
                let tags = inputTagsPost.value
                let body = quill.root.innerHTML //! Quill
+               let reactions = inputReactions.value
 
             if (
                 urlImage === '' ||
                 title === '' ||
                 body === '' ||
-                 tags === ''
+                 tags === ''||
+                 reactions === ''
             )
                {
                 alertHolder.innerHTML =  `

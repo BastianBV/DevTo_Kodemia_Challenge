@@ -50,10 +50,11 @@ console.log(inputUrlImage.value)
                     urlImage: urlImage,
                     title: title,
                     body: body,
-                    tags: tags
+                    tags: tags,
+                    
                 }
                 
-                fetch('https://devto-javascript-default-rtdb.firebaseio.com/post/.json',{
+                fetch('http://localhost:8080/post',{
                     method: 'POST',
                     body: JSON.stringify(postToInsert),
                     headers: {'content-type': 'application/json; charset=UTF-8'}

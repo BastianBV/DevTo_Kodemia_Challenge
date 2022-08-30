@@ -4,7 +4,7 @@ const bloque = document.querySelector('#profile-tab-pane');
 
 
 /// URL FOR DATA BASE
-const firebaseUrl = 'https://devto-javascript-default-rtdb.firebaseio.com/post/.json';
+const firebaseUrl = 'http://localhost:8080/post/';
 
 
 // Object definition

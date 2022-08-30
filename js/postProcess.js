@@ -31,7 +31,7 @@ const postOnDataBaseObjArray = [];
 let post4Render = [];
 for (let i in postToRenderRaw.posts){
     console.log("reactions", postToRenderRaw.posts[i].reactions)
-    postObj = {
+    let postObj = {
         body: postToRenderRaw.posts[i].body,
         tags: postToRenderRaw.posts[i].tags,
         title: postToRenderRaw.posts[i].title,
@@ -41,10 +41,11 @@ for (let i in postToRenderRaw.posts){
         time2Read: time2Read(postToRenderRaw.posts[i].body),
         id: postToRenderRaw.posts[i]._id,
         urlImage: postToRenderRaw.posts[i].urlImage,
+        author: postToRenderRaw.posts[i].author,
     }
     postOnDataBaseObjArray.push(postObj);
-    
 }
+
 
 //parsingDate("2022-08-04T22:30:11.265Z")
 //postOnDataBase.forEach(console.log);
@@ -139,7 +140,7 @@ function filterPosts(string2search){
 
 //RENDER POST PRINCIPAL
 function renderPostPrimario(postObj){
-
+    console.log("datos", postObj)
     const divPost = document.createElement('div');
     divPost.innerHTML = `
     <div id="${postObj.id}" class="card mb-3">
@@ -155,14 +156,14 @@ function renderPostPrimario(postObj){
                 </div>
 
                 <div class="profile-card">
-                    <span class="name-profile">${postObj.autor} </span>
+                    <span class="name-profile">${postObj.author} </span>
                     <span class="date-profile">${postObj.date}</span>
                 </div>
             </div>
 
             <div class="card-distribution clicked">
                 <h2 class="card-title">
-                <a href="entry.html?postId=${postObj._id}" class="title-post">
+                <a href="entry.html?postId=${postObj.id}" class="title-post">
                         ${postObj.title}
 
                     </a>

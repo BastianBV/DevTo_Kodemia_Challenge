@@ -4,6 +4,7 @@ const LogInBtn =  document.querySelector(".LogInBtn");
 const CreatePostBtn =  document.querySelector(".CreatePostBtn");
 
 let keysInLocal = window.localStorage
+console.log(keysInLocal)
 
 console.log(keysInLocal)
 

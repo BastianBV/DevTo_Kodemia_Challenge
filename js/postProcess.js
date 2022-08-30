@@ -240,7 +240,7 @@ function renderPostSecundario(postObj){
                     </div>
                     <div class="card-distribution">
                         <h2 class="card-title">
-                            <a href="entry.html?postId${postObj.id}" class="title-post-secondary">
+                            <a href="entry.html?postId=${postObj.id}" class="title-post-secondary">
                                 ${postObj.title}
                             </a>
                         </h2>

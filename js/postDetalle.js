@@ -38,16 +38,16 @@ post_ = getData(firebaseUrlPost);
 
 
 
-console.log("posts", post_)
+console.log("img", post_.post.urlImage)
 
 
 
 let htmlString = `
 <div class="image-graph">
-          <img src="${post_.post.urlImage}" class="card-img-top  cardImgTop img-fluid" alt="...">
+          <img src=${post_.post.urlImage} class="card-img-top  cardImgTop img-fluid" alt="...">
         </div>
         <div class="d-flex align-items-center">
-        <a id="edit-post" href="./editPost.html?postId-${post_.post._id}"> 
+        <a id="edit-post" href="./editPost.html?postId=${post_.post._id}"> 
             <button type="button" class="btn btn-outline-warning">Edit Post</button>
         </a>    
 
@@ -74,6 +74,7 @@ let htmlString = `
 
         ${post_.post.body}
 ` 
+console.log(post_.post.title)
 
 mainContainer.innerHTML = htmlString;
 

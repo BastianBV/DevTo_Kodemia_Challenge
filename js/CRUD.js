@@ -51,7 +51,11 @@ console.log(inputUrlImage.value)
                     title: title,
                     body: body,
                     tags: tags,
-                    
+                    reactions: Math.floor(Math.random()*50),
+                    comments: Math.floor(Math.random()*10),
+                    author: 'Someone',
+                    date: new Date()
+
                 }
                 
                 fetch('http://localhost:8080/post',{

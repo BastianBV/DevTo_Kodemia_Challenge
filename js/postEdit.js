@@ -8,6 +8,8 @@ const inputUrlImage  = document.querySelector('.post_urlImage_input')
 const updateBtn      = document.querySelector('#updateBtn');
 const deleteBtn      = document.querySelector('#deleteBtn'); 
 
+// Params
+const token = localStorage.getItem("token")
 let queryURL = window.location.search 
 let postId = `${queryURL.substring(8)}`
 
@@ -63,19 +65,28 @@ updateBtn.addEventListener('click',(event)=>{
     fetch(firebaseUrlPost, {
         method:"PATCH",
         body: JSON.stringify(postToUpdate),
-        headers: {"Content-type": "application/json; charset=UTF-8"}
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Authorization": `Bearer ${token}`
+        }
     })
     .then((res)=>{
         return res.json()
     })
     .then((res)=>{
-        console.log(res)
+        if(res.success === false){
+            alert("No estas autorizado")
+            
+        }else{ 
+            window.location.href = `./index.html`
+        }
     })
     .catch((error)=>{
         console.log(error)
     });
 
-    window.location.href = `./index.html`
+    
+    
 
 
 });

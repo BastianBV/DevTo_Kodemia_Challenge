@@ -4,7 +4,8 @@ let postId = params.get('postId')*/
 let queryURL = window.location.search 
 let postId = queryURL.substring(8)
 console.log(postId)
-
+// Params
+const token = localStorage.getItem("token")
 const mainContainer = document.querySelector('#main-container');
 
 
@@ -51,7 +52,7 @@ let htmlString = `
             <button type="button" class="btn btn-outline-warning">Edit Post</button>
         </a>    
 
-        <a id="delete-post" href="./index.html">    
+        <a id="delete-post" href="#">    
             <button type="button" class="btn btn-outline-danger">Delete Post</button>
         </a>
     </div>
@@ -102,13 +103,16 @@ function deletePost(url) {
     console.log('Dentro de DELETE POST')
     fetch(url, {
         method:"DELETE",
-        headers: {"Content-type": "application/json; charset=UTF-8"}
+        headers: {"Content-type": "application/json; charset=UTF-8",
+        "Authorization": `Bearer ${token}` 
+    }
     })
     .then((res)=>{
         return res.json()
     })
     .then((res)=>{
-        console.log(res)
+        alert("Se borro correctamente")
+        window.location.href = `./index.html`
     })
     .catch((error)=>{
         console.log(error)

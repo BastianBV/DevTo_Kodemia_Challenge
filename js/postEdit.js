@@ -2,15 +2,15 @@
 
 //let createUpdate = document.querySelector('.btn_update_post')
 const inputTitlePost = document.querySelector('.post_title_input')
-const inputTagsPost  = document.querySelector('.post_tags_input')
-const inputBodyPost  = document.querySelector('.post_body_input')
-const inputUrlImage  = document.querySelector('.post_urlImage_input')
-const updateBtn      = document.querySelector('#updateBtn');
-const deleteBtn      = document.querySelector('#deleteBtn'); 
+const inputTagsPost = document.querySelector('.post_tags_input')
+const inputBodyPost = document.querySelector('.post_body_input')
+const inputUrlImage = document.querySelector('.post_urlImage_input')
+const updateBtn = document.querySelector('#updateBtn');
+const deleteBtn = document.querySelector('#deleteBtn');
 
 // Params
 const token = localStorage.getItem("token")
-let queryURL = window.location.search 
+let queryURL = window.location.search
 let postId = `${queryURL.substring(8)}`
 
 console.log(postId)
@@ -40,18 +40,18 @@ const getData = (url) => {
 post_ = getData(firebaseUrlPost);
 
 
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded', () => {
     inputTitlePost.value = post_.post.title
     quill.root.innerHTML = post_.post.body
-    inputTagsPost.value  = post_.post.tags
-    inputUrlImage.value  = post_.post.urlImage
+    inputTagsPost.value = post_.post.tags
+    inputUrlImage.value = post_.post.urlImage
 
 })
 
-updateBtn.addEventListener('click',(event)=>{
-    post_.post.title    = inputTitlePost.value;
-    post_.post.body     = quill.root.innerHTML;
-    post_.post.tags     = inputTagsPost.value;
+updateBtn.addEventListener('click', (event) => {
+    post_.post.title = inputTitlePost.value;
+    post_.post.body = quill.root.innerHTML;
+    post_.post.tags = inputTagsPost.value;
     post_.post.urlImage = inputUrlImage.value;
     console.log(post_);
 
@@ -63,54 +63,57 @@ updateBtn.addEventListener('click',(event)=>{
     }
 
     fetch(firebaseUrlPost, {
-        method:"PATCH",
+        method: "PATCH",
         body: JSON.stringify(postToUpdate),
         headers: {
             "Content-type": "application/json; charset=UTF-8",
             "Authorization": `Bearer ${token}`
         }
     })
-    .then((res)=>{
-        return res.json()
-    })
-    .then((res)=>{
-        if(res.success === false){
-            alert("No estas autorizado")
-            
-        }else{ 
-            window.location.href = `./index.html`
-        }
-    })
-    .catch((error)=>{
-        console.log(error)
-    });
+        .then((res) => {
+            return res.json()
+        })
+        .then((res) => {
+            if (res.success === false) {
+                alert("No estas autorizado")
 
-    
-    
+            } else {
+                window.location.href = `./index.html`
+            }
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+
+
+
 
 
 });
-    
-deleteBtn.addEventListener('click',(event)=>{
+
+deleteBtn.addEventListener('click', (event) => {
     console.log('Dentro de DELETE POST');
-    
+
     fetch(firebaseUrlPost, {
-        method:"DELETE",
-        headers: {"Content-type": "application/json; charset=UTF-8"}
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Authorization": `Bearer ${token}`
+        }
     })
-    .then((res)=>{
-        return res.json()
-    })
-    .then((res)=>{
-        console.log(res)
-    })
-    .catch((error)=>{
-        console.log(error)
-    })
+        .then((res) => {
+            return res.json()
+        })
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
     console.log('deletion complete');
 
-    window.location.href = `./index.html`
-    
+    // window.location.href = `./index.html`
+
 
 });
 

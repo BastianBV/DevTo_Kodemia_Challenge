@@ -8,14 +8,15 @@ let checkboxcontainer =   document.querySelector('#aside-icon-checkboxheart')
         if(
             checkboxhider == true 
         ){
-            // post_.reactions = post_.reactions +1;
+            const rest = await fetch (`http://localhost:8080/post/${post_.post._id}/removelikes`, {method:"PATCH"})
+            const res = await rest.json()
+            post_.post.reactions = res.data.updateLikes.reactions
+            console.log(post_.post._id)
+        }else{
             const plainRes = await fetch(`http://localhost:8080/post/${post_.post._id}/likes`, {method:"PATCH"} )
             const res = await plainRes.json()
             post_.post.reactions = res.data.updateLikes.reactions
             console.log(post_.post._id)
-        }else{
-            const rest = await fetch (``)
-           
         }
         asidecount.textContent =  post_.post.reactions.likes;
         console.log(checkboxhider)
